@@ -1,6 +1,6 @@
 Name:		python-sphinx-theme-builder
 Version:	0.2.0b2
-Release:	1
+Release:	2
 Source0:	https://files.pythonhosted.org/packages/source/s/sphinx_theme_builder/sphinx-theme-builder-%{version}.tar.gz
 Summary:	A tool for authoring Sphinx themes with a simple (opinionated) workflow.
 URL:		https://pypi.org/project/sphinx-theme-builder/
@@ -9,6 +9,9 @@ Group:		Development/Python
 BuildRequires:	python
 BuildSystem:	python
 BuildArch:	noarch
+
+%patchlist
+sphinx-theme-builder-python-3.14.patch
 
 %description
 A tool for authoring Sphinx themes with a simple (opinionated) workflow.

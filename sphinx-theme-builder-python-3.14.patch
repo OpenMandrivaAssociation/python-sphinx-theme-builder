@@ -1,0 +1,16 @@
+diff -up python-sphinx-theme-builder-0.2.0b2/src/sphinx_theme_builder/_internal/project.py.1~ python-sphinx-theme-builder-0.2.0b2/src/sphinx_theme_builder/_internal/project.py
+--- python-sphinx-theme-builder-0.2.0b2/src/sphinx_theme_builder/_internal/project.py.1~	2022-12-21 23:52:49.654517200 +0100
++++ python-sphinx-theme-builder-0.2.0b2/src/sphinx_theme_builder/_internal/project.py	2025-12-15 00:11:57.224080536 +0100
+@@ -40,9 +40,10 @@ def get_version_using_ast(contents: byte
+             and len(child.targets) == 1
+             and isinstance(child.targets[0], ast.Name)
+             and child.targets[0].id == "__version__"
+-            and isinstance(child.value, ast.Str)
++            and isinstance(child.value, ast.Constant)
++            and isinstance(child.value.value, str)
+         ):
+-            version = child.value.s
++            version = child.value.value
+             break
+ 
+     return version
